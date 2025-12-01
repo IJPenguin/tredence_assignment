@@ -72,7 +72,7 @@ const Room: React.FC = () => {
       dispatch(setCode(newCode))
       // Send code update to WebSocket
       if (connectionState === ConnectionState.CONNECTED) {
-        websocketService.sendCodeUpdate(newCode)
+        websocketService.sendCodeUpdate(newCode, Date.now())
       }
     },
     [dispatch, connectionState]
