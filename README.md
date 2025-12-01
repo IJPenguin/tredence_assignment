@@ -8,6 +8,9 @@ Here is the live deployment link.
 https://tredence-assignment-fa7x.vercel.app
 ```
 
+Note: The backend might be winded down (Free tier problems) so please be patient for it to wind up. Might take upto 2 minutes. If not then please use the local deployment as instructed below.
+
+
 This is a collaborative code editing platform where multiple people can write code together in real-time.
 
 ## What Can It Do?
