@@ -1,0 +1,129 @@
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.connection-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.connection-status-text {
+  font-weight: 500;
+}
+
+/* Connected state */
+.connection-status-connected {
+  background-color: rgba(0, 255, 0, 0.1);
+  color: #4caf50;
+}
+
+.connection-status-connected .connection-status-indicator {
+  background-color: #4caf50;
+  box-shadow: 0 0 4px #4caf50;
+}
+
+/* Connecting state */
+.connection-status-connecting {
+  background-color: rgba(255, 165, 0, 0.1);
+  color: #ff9800;
+}
+
+.connection-status-connecting .connection-status-indicator {
+  background-color: #ff9800;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Disconnected state */
+.connection-status-disconnected {
+  background-color: rgba(128, 128, 128, 0.1);
+  color: #9e9e9e;
+}
+
+.connection-status-disconnected .connection-status-indicator {
+  background-color: #9e9e9e;
+}
+
+/* Error state */
+.connection-status-error {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #f44336;
+}
+
+.connection-status-error .connection-status-indicator {
+  background-color: #f44336;
+}
+
+/* Reconnect button */
+.connection-status-reconnect-btn {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.connection-status-reconnect-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.connection-status-reconnect-btn:active {
+  transform: translateY(0);
+}
+
+.connection-status-reconnect-btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Pulse animation for connecting state */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .connection-status-connected {
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+
+  .connection-status-connecting {
+    background-color: rgba(255, 152, 0, 0.1);
+  }
+
+  .connection-status-disconnected {
+    background-color: rgba(158, 158, 158, 0.1);
+  }
+
+  .connection-status-error {
+    background-color: rgba(244, 67, 54, 0.1);
+  }
+
+  .connection-status-reconnect-btn {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .connection-status-reconnect-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

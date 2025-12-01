@@ -1,0 +1,218 @@
+.error-boundary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #242424;
+}
+
+.error-boundary-content {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.error-boundary-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.error-boundary-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f87171;
+}
+
+.error-boundary-message {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.error-boundary-details {
+  margin: 2rem 0;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-boundary-summary {
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.error-boundary-summary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.error-boundary-summary:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: -2px;
+}
+
+.error-boundary-stack {
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #f87171;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.error-boundary-stack code {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Courier New', monospace;
+}
+
+.error-boundary-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-boundary-retry-btn,
+.error-boundary-refresh-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.error-boundary-retry-btn {
+  background-color: #646cff;
+  color: white;
+}
+
+.error-boundary-retry-btn:hover {
+  background-color: #535bf2;
+  transform: translateY(-2px);
+}
+
+.error-boundary-retry-btn:active {
+  transform: translateY(0);
+}
+
+.error-boundary-retry-btn:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+.error-boundary-refresh-btn {
+  background-color: transparent;
+  color: #646cff;
+  border: 2px solid #646cff;
+}
+
+.error-boundary-refresh-btn:hover {
+  background-color: #646cff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.error-boundary-refresh-btn:active {
+  transform: translateY(0);
+}
+
+.error-boundary-refresh-btn:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  .error-boundary {
+    background-color: #ffffff;
+  }
+
+  .error-boundary-content {
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .error-boundary-title {
+    color: #dc2626;
+  }
+
+  .error-boundary-message {
+    color: #213547;
+  }
+
+  .error-boundary-details {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .error-boundary-summary {
+    color: #213547;
+  }
+
+  .error-boundary-summary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .error-boundary-stack {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: #dc2626;
+  }
+
+  .error-boundary-retry-btn {
+    background-color: #535bf2;
+  }
+
+  .error-boundary-retry-btn:hover {
+    background-color: #4248d6;
+  }
+
+  .error-boundary-refresh-btn {
+    color: #535bf2;
+    border-color: #535bf2;
+  }
+
+  .error-boundary-refresh-btn:hover {
+    background-color: #535bf2;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .error-boundary-content {
+    padding: 1.5rem;
+  }
+
+  .error-boundary-title {
+    font-size: 1.5rem;
+  }
+
+  .error-boundary-message {
+    font-size: 1rem;
+  }
+
+  .error-boundary-actions {
+    flex-direction: column;
+  }
+
+  .error-boundary-retry-btn,
+  .error-boundary-refresh-btn {
+    width: 100%;
+  }
+}
